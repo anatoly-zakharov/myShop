@@ -1,12 +1,15 @@
-﻿@model CarsListViewModel //Эта директива сообщает Visual Studio, что ваше представление ожидает модель, которая является списком объектов Car. После этого IntelliSense должен правильно работать, предоставляя вам подсказки при написании кода C# в List.cshtml.
-
-<h1>Все автомобили</h1>
+﻿<h1>Все автомобили</h1>
 <h3>@Model.currCategory</h3>
-@{
-    foreach(var car in Model.getAllCars) {
-        <div>
-            <h2>Модель: @car.name</h2>
-            <p>Цена: @car.price.ToString("c")</p>
-        </div>
+<div class="row mt-5 mt-2">
+    @{
+        foreach(var car in Model.getAllCars) {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@car.img" alt="@car.name" />
+                <h2>@car.name</h2>
+                <p>@car.shortDesc</p>
+                <p>Цена: @car.price.ToString("c")</p>
+                <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+            </div>
+        }
     }
-}
+</div>
