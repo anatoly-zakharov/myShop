@@ -26,6 +26,7 @@ namespace myShop.Controllers
             {
                 shopCart = _shopCart,
             };
+            ViewBag.Title = "Корзина";
             return View(obj);
         }
 
